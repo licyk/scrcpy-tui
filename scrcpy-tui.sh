@@ -142,6 +142,7 @@ function start_scrcpy()
 
 
 	if [ $? = 0 ];then #选择了一个设备
+	echo $?
 		if [ $start_scrcpy_ = "返回" ];then
 			mainmenu
 		else
