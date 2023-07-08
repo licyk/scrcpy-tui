@@ -31,7 +31,7 @@ windows系统安装配置环境的方法：
 在“系统变量”部分点双击“Path”，点击新建，把刚刚记下来的路径粘贴上去，然后一直点确定直至完成  
 此时aira2安装完成
 
-4、前往scrcpy官网https://github.com/Genymobile/scrcpy/releases/下载scrcpy-win64，并解压  
+4、前往[scrcpy官网](https://github.com/Genymobile/scrcpy/releases/)下载scrcpy-win64，并解压  
 此时把解压的文件放在合适的位置，位置可以自己选，只要能找到就行，比如  
 C:\scrcpy  
 (文件夹内包括adb.exe和scrcpy.exe)  
