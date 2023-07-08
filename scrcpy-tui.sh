@@ -146,8 +146,9 @@ function start_scrcpy()
 		else
 			start_option_panel
 		fi
+	else
+		mainmenu
 	fi
-	mainmenu
 }
 
 #连接参数设置
