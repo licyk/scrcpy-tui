@@ -279,9 +279,9 @@ function update_script()
 			rm -rfv ./scrcpy-tui-update-tmp
 			chmod u+x scrcpy-tui.sh
 			source ./scrcpy-tui.sh
-			dialog --clear --title "更新选项" --msgbox "更新成功，当前版本为$version_info_" 20 60
+			echo "更新成功"
 		else
-			dialog --clear --title "更新选项" --msgbox "更新失败，请重试" 20 60
+			echo "更新失败"
 		fi
 	else
 		aria2c https://raw.githubusercontent.com/licyk/scrcpy-tui/main/scrcpy-tui.sh -d ./scrcpy-tui-update-tmp/
@@ -290,9 +290,9 @@ function update_script()
 			rm -rfv ./scrcpy-tui-update-tmp
 			chmod u+x scrcpy-tui.sh
 			source ./scrcpy-tui.sh
-			dialog --clear --title "更新选项" --msgbox "更新成功，当前版本为$version_info_" 20 60
+			echo "更新成功"
 		else
-			dialog --clear --title "更新选项" --msgbox "更新失败，请重试" 20 60
+			echo "更新失败"
 		fi
 	fi
 	mainmenu
