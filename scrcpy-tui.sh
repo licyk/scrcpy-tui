@@ -100,19 +100,28 @@ function start_scrcpy()
 			3>&1 1>&2 2>&3)
 
 	#这个是显示参数
-	scrcpy_option_1="禁用"
-	scrcpy_option_2="禁用"
+	scrcpy_option_1="60"
+	scrcpy_option_2="30"
 	scrcpy_option_3="禁用"
 	scrcpy_option_4="禁用"
 	scrcpy_option_5="禁用"
 	scrcpy_option_6="禁用"
 	scrcpy_option_7="禁用"
 	scrcpy_option_8="禁用"
-	scrcpy_option_9="60"
-	scrcpy_option_10="30"
+	scrcpy_option_9="禁用"
+	scrcpy_option_10="禁用"
+	scrcpy_option_11="输出"
+	scrcpy_option_12="禁用"
+	scrcpy_option_13="禁用"
+	scrcpy_option_14="禁用"
+	scrcpy_option_15="禁用"
+	scrcpy_option_16="禁用"
+	scrcpy_option_17="禁用"
 
 	#为start_option_panel函数声明变量
 	declare -g start_scrcpy__="$start_scrcpy_"
+	declare -g start_scrcpy_option_1="--max-fps $scrcpy_option_1"
+	declare -g start_scrcpy_option_2="--video-bit-rate $scrcpy_option_2"m""
 	declare -g scrcpy_option_1_="$scrcpy_option_1"
 	declare -g scrcpy_option_2_="$scrcpy_option_2"
 	declare -g scrcpy_option_3_="$scrcpy_option_3"
@@ -123,8 +132,13 @@ function start_scrcpy()
 	declare -g scrcpy_option_8_="$scrcpy_option_8"
 	declare -g scrcpy_option_9_="$scrcpy_option_9"
 	declare -g scrcpy_option_10_="$scrcpy_option_10"
-	declare -g start_scrcpy_option_9="--max-fps $scrcpy_option_9"
-	declare -g start_scrcpy_option_10="--video-bit-rate $scrcpy_option_10"m""
+	declare -g scrcpy_option_11_="$scrcpy_option_11"
+	declare -g scrcpy_option_12_="$scrcpy_option_12"
+	declare -g scrcpy_option_13_="$scrcpy_option_13"
+	declare -g scrcpy_option_14_="$scrcpy_option_14"
+	declare -g scrcpy_option_15_="$scrcpy_option_15"
+	declare -g scrcpy_option_16_="$scrcpy_option_16"
+	declare -g scrcpy_option_17_="$scrcpy_option_17"
 
 	if [ $? = 0 ];then #选择了一个设备
 		if [ $start_scrcpy_ = "返回" ];then
@@ -143,22 +157,30 @@ function start_option_panel()
 	start_option_panel_=$(dialog --clear --title "连接选项" \
 				--menu "请设置启动选项\n选择的设备是："$start_scrcpy__"" 20 60 10 \
 				"0" "开始连接" \
-				"1" "置顶窗口:"$scrcpy_option_1_"" \
-				"2" "运行时禁用屏保:"$scrcpy_option_2_"" \
-				"3" "Ctrl+v粘贴:"$scrcpy_option_3_"" \
-				"4" "禁用设备控制:"$scrcpy_option_4_"" \
-				"5" "不显示设备:"$scrcpy_option_5_"" \
-				"6" "拖动传输文件:"$scrcpy_option_6_"" \
-				"7" "显示触摸反馈:"$scrcpy_option_7_"" \
-				"8" "启用屏幕录制:"$scrcpy_option_8_"" \
-				"9" "最大帧率:"$scrcpy_option_9_"FPS" \
-				"10" "画面码率:"$scrcpy_option_10_"M" \
+				"1" "最大帧率:"$scrcpy_option_1_"FPS" \
+				"2" "画面码率:"$scrcpy_option_2_"M" \
+				"3" "置顶窗口:"$scrcpy_option_3_"" \
+				"4" "运行时禁用屏保:"$scrcpy_option_4_"" \
+				"5" "Ctrl+v粘贴:"$scrcpy_option_5_"" \
+				"6" "禁用设备控制:"$scrcpy_option_6_"" \
+				"7" "不显示设备:"$scrcpy_option_7_"" \
+				"8" "拖动传输文件:"$scrcpy_option_8_"" \
+				"9" "显示触摸反馈:"$scrcpy_option_9_"" \
+				"10" "启用屏幕录制:"$scrcpy_option_10_"" \
+				"11" "选择音频源:"$scrcpy_option_11_"" \
+				"12" "关闭时断开adb连接:"$scrcpy_option_12_"" \
+				"13" "模拟物理键盘:"$scrcpy_option_13_"" \
+				"14" "模拟物理鼠标:"$scrcpy_option_14_"" \
+				"15" "禁用音频转发:"$scrcpy_option_15_"" \
+				"16" "OTG模式:"$scrcpy_option_16_"" \
+				"17" "RAW输入模式:"$scrcpy_option_17_"" \
+
 				3>&1 1>&2 2>&3)
 	
 	if [ $? = 0 ];then
 		if [ $start_option_panel_ = 0 ];then #退出启动参数设置界面，启动scrcpy
 			rec_name=$(date "+%Y-%m-%d-%H-%M-%S") #生成录制视频名称
-			nohup scrcpy --serial $start_scrcpy__ $start_scrcpy_option_1 $start_scrcpy_option_2 $start_scrcpy_option_3 $start_scrcpy_option_4 $start_scrcpy_option_5 $start_scrcpy_option_6 $start_scrcpy_option_7 $start_scrcpy_option_8 $start_scrcpy_option_9 $start_scrcpy_option_10 &
+			nohup scrcpy --serial $start_scrcpy__ $start_scrcpy_option_1 $start_scrcpy_option_2 $start_scrcpy_option_3 $start_scrcpy_option_4 $start_scrcpy_option_5 $start_scrcpy_option_6 $start_scrcpy_option_7 $start_scrcpy_option_8 $start_scrcpy_option_9 $start_scrcpy_option_10 $start_scrcpy_option_11 $start_scrcpy_option_12 $start_scrcpy_option_13 $start_scrcpy_option_14 $start_scrcpy_option_15 $start_scrcpy_option_16 $start_scrcpy_option_17 &
 			#显示进度条
 			{	for((x=1;x<=10;x++))
 			do
@@ -170,31 +192,22 @@ function start_option_panel()
 			#完成后回到主界面
 			mainmenu
 		else #未选择启动
+
 		#判断选择修改的参数
 			if [ $start_option_panel_ = 1 ];then
-				if [ $scrcpy_option_1_ = "禁用" ];then
-					scrcpy_option_1_="启用"
-					start_scrcpy_option_1="--always-on-top"
-				else
-					scrcpy_option_1_="禁用"
-					start_scrcpy_option_1=""
-				fi
+				scrcpy_option_1_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的帧率，默认为60帧" 60 20 60 3>&1 1>&2 2>&3)
+				start_scrcpy_option_1="--max-fps $scrcpy_option_1_"
 			fi
 
 			if [ $start_option_panel_ = 2 ];then
-				if [ $scrcpy_option_2_ = "禁用" ];then
-					scrcpy_option_2_="启用"
-					start_scrcpy_option_2="--disable-screensaver"
-				else
-					scrcpy_option_2_="禁用"
-					start_scrcpy_option_2=""
-				fi
+				scrcpy_option_2_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的画面码率，默认为30M" 60 20 30 3>&1 1>&2 2>&3)
+				start_scrcpy_option_2="--video-bit-rate $scrcpy_option_2_"m""
 			fi
 
 			if [ $start_option_panel_ = 3 ];then
 				if [ $scrcpy_option_3_ = "禁用" ];then
 					scrcpy_option_3_="启用"
-					start_scrcpy_option_3="--legacy-paste"
+					start_scrcpy_option_3="--always-on-top"
 				else
 					scrcpy_option_3_="禁用"
 					start_scrcpy_option_3=""
@@ -204,7 +217,7 @@ function start_option_panel()
 			if [ $start_option_panel_ = 4 ];then
 				if [ $scrcpy_option_4_ = "禁用" ];then
 					scrcpy_option_4_="启用"
-					start_scrcpy_option_4="--no-control"
+					start_scrcpy_option_4="--disable-screensaver"
 				else
 					scrcpy_option_4_="禁用"
 					start_scrcpy_option_4=""
@@ -214,7 +227,7 @@ function start_option_panel()
 			if [ $start_option_panel_ = 5 ];then
 				if [ $scrcpy_option_5_ = "禁用" ];then
 					scrcpy_option_5_="启用"
-					start_scrcpy_option_5="--no-display"
+					start_scrcpy_option_5="--legacy-paste"
 				else
 					scrcpy_option_5_="禁用"
 					start_scrcpy_option_5=""
@@ -224,7 +237,7 @@ function start_option_panel()
 			if [ $start_option_panel_ = 6 ];then
 				if [ $scrcpy_option_6_ = "禁用" ];then
 					scrcpy_option_6_="启用"
-					start_scrcpy_option_6="--push-target /sdcard/"
+					start_scrcpy_option_6="--no-control"
 				else
 					scrcpy_option_6_="禁用"
 					start_scrcpy_option_6=""
@@ -234,17 +247,17 @@ function start_option_panel()
 			if [ $start_option_panel_ = 7 ];then
 				if [ $scrcpy_option_7_ = "禁用" ];then
 					scrcpy_option_7_="启用"
-					start_scrcpy_option_7="--show-touches"
+					start_scrcpy_option_7="--no-display"
 				else
 					scrcpy_option_7_="禁用"
 					start_scrcpy_option_7=""
 				fi
 			fi
-			
+
 			if [ $start_option_panel_ = 8 ];then
 				if [ $scrcpy_option_8_ = "禁用" ];then
 					scrcpy_option_8_="启用"
-					start_scrcpy_option_8="--record "$rec_name".mp4"
+					start_scrcpy_option_8="--push-target /sdcard/"
 				else
 					scrcpy_option_8_="禁用"
 					start_scrcpy_option_8=""
@@ -252,13 +265,93 @@ function start_option_panel()
 			fi
 
 			if [ $start_option_panel_ = 9 ];then
-				scrcpy_option_9_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的帧率，默认为60帧" 60 20 60 3>&1 1>&2 2>&3)
-				start_scrcpy_option_9="--max-fps $scrcpy_option_9_"
+				if [ $scrcpy_option_9_ = "禁用" ];then
+					scrcpy_option_9_="启用"
+					start_scrcpy_option_9="--show-touches"
+				else
+					scrcpy_option_9_="禁用"
+					start_scrcpy_option_9=""
+				fi
+			fi
+			
+			if [ $start_option_panel_ = 10 ];then
+				if [ $scrcpy_option_10_ = "禁用" ];then
+					scrcpy_option_10_="启用"
+					start_scrcpy_option_10="--record "$rec_name".mp4"
+				else
+					scrcpy_option_10_="禁用"
+					start_scrcpy_option_10=""
+				fi
+			fi
+			
+			if [ $start_option_panel_ = 11 ];then
+				if [ $scrcpy_option_11_ = "输出" ];then
+					scrcpy_option_11_="麦克风"
+					start_scrcpy_option_11="--audio-source=mic"
+				else
+					scrcpy_option_11_="输出"
+					start_scrcpy_option_11=""
+				fi
 			fi
 
-			if [ $start_option_panel_ = 10 ];then
-				scrcpy_option_10_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的画面码率，默认为30M" 60 20 30 3>&1 1>&2 2>&3)
-				start_scrcpy_option_10="--video-bit-rate $scrcpy_option_10_"m""
+			if [ $start_option_panel_ = 12 ];then
+				if [ $scrcpy_option_12_ = "禁用" ];then
+					scrcpy_option_12_="启用"
+					start_scrcpy_option_12="--kill-adb-on-close"
+				else
+					scrcpy_option_12_="禁用"
+					start_scrcpy_option_12=""
+				fi
+			fi
+
+			if [ $start_option_panel_ = 13 ];then
+				if [ $scrcpy_option_13_ = "禁用" ];then
+					scrcpy_option_13_="启用"
+					start_scrcpy_option_13="--hid-keyboard"
+				else
+					scrcpy_option_13_="禁用"
+					start_scrcpy_option_13=""
+				fi
+			fi
+
+			if [ $start_option_panel_ = 14 ];then
+				if [ $scrcpy_option_14_ = "禁用" ];then
+					scrcpy_option_14_="启用"
+					start_scrcpy_option_14="--hid-mouse"
+				else
+					scrcpy_option_14_="禁用"
+					start_scrcpy_option_14=""
+				fi
+			fi
+
+			if [ $start_option_panel_ = 15 ];then
+				if [ $scrcpy_option_15_ = "禁用" ];then
+					scrcpy_option_15_="启用"
+					start_scrcpy_option_15="--no-audio"
+				else
+					scrcpy_option_15_="禁用"
+					start_scrcpy_option_15=""
+				fi
+			fi
+
+			if [ $start_option_panel_ = 16 ];then
+				if [ $scrcpy_option_16_ = "禁用" ];then
+					scrcpy_option_16_="启用"
+					start_scrcpy_option_16="--otg"
+				else
+					scrcpy_option_16_="禁用"
+					start_scrcpy_option_16=""
+				fi
+			fi
+
+			if [ $start_option_panel_ = 17 ];then
+				if [ $scrcpy_option_17_ = "禁用" ];then
+					scrcpy_option_17_="启用"
+					start_scrcpy_option_17="--raw-key-events"
+				else
+					scrcpy_option_17_="禁用"
+					start_scrcpy_option_17=""
+				fi
 			fi
 
 			#设置完参数后再回到设置界面
@@ -327,6 +420,7 @@ function about_script()
 注:\n
 手机在重启或重新打开usb调试后需要重新启用手机网络调试\n
 手机的ip地址在重启或开关WIFI后会变化，需要重新连接\n
+在脚本所在目录会产生nohup.out日志文件\n
 \n
 \n
 ●连接选项说明：\n
@@ -362,6 +456,41 @@ Ctrl+v粘贴：\n
 \n
 画面码率：\n
 使用给定的位率编码视频,以比特/秒表示\n
+选择音频源;\n
+   选择音频源(输出或麦克风)。\n
+   默认为输出。\n
+\n
+关闭时断开adb连接;\n
+   当scrcpy结束时关闭adb。\n
+\n
+模拟物理键盘:\n
+   通过HID over AOAv2模拟物理键盘。\n
+   它为IME用户提供了更好的体验,并允许生成非ASCII字符,与默认的注入方法相反。\n
+   它可能只能通过USB工作。\n
+   键盘布局必须在设备上通过“设置” - “系统” - “语言和输入” - “物理键盘”进行配置(一次性配置)。这个设置页面可以直接启动:adb shell am start -a android.settings.HARD_KEYBOARD_SETTINGS。\n
+   然而,该选项仅在启用HID键盘时才可用(或连接了物理键盘)。\n
+   另请参阅模拟物理鼠标。\n
+\n
+模拟物理鼠标:\n
+   通过使用HID over AOAv2模拟一个物理鼠标。\n
+   在这种模式下,计算机鼠标被捕获以直接控制设备(相对鼠标模式)。\n
+   LAlt、LSuper或RSuper切换捕获模式,以将鼠标控制权还给计算机。\n
+   它可能只能通过USB工作。\n
+   另请参阅模拟物理键盘。\n
+\n
+禁用音频转发:\n
+   字面意思。\n
+\n
+OTG模式:\n
+   在OTG模式下运行:模拟物理键盘和鼠标,就像计算机键盘和鼠标直接通过OTG线缆插在设备上一样。\n
+   在这种模式下,不需要adb(USB调试),并禁用镜像。\n
+   LAlt、LSuper或RSuper切换鼠标捕获模式,以将鼠标控制权还给计算机。\n
+   如果设置了模拟物理键盘或模拟物理鼠标中的任何一个,则只启用键盘或鼠标,否则启用两者。\n
+   它可能只能通过USB工作。\n
+   请参阅模拟物理键盘和模拟物理鼠标。\n
+\n
+RAW输入模式:\n
+   为所有输入键注入键事件,并忽略文本事件。\n
 \n
 \n
 ●快捷键：\n
@@ -440,7 +569,7 @@ adb:$(adb version | awk 'NR==1'| awk -F  ' ' ' {print  " " $5} ') \n
 
 ###############################################################################
 
-version_info_="0.0.1"
+version_info_="0.0.2"
 test_num=0
 
 if which dialog > /dev/null ;then
