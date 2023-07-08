@@ -292,6 +292,7 @@ function update_script()
 			chmod u+x scrcpy-tui.sh
 			if (dialog --clear --title "更新选项" --msgbox "更新成功" 20 60);then
 			source ./scrcpy-tui.sh
+			fi
 		else
 			dialog --clear --title "更新选项" --msgbox "更新失败，请重试" 20 60
 		fi
