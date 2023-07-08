@@ -90,15 +90,6 @@ function list_connected()
 #选择设备界面
 function start_scrcpy()
 {
-	list_devices=$(adb devices | awk 'NR > 1' ) #读取设备连接码
-
-	#列出设备连接码
-	start_scrcpy_=$(dialog --clear --title "连接选项" \
-			--menu "清选择要连接的设备" 20 60 10 \
-			"返回" "<--" \
-			$list_devices \
-			3>&1 1>&2 2>&3)
-
 	#这个是显示参数
 	scrcpy_option_1="60"
 	scrcpy_option_2="30"
@@ -139,6 +130,16 @@ function start_scrcpy()
 	declare -g scrcpy_option_15_="$scrcpy_option_15"
 	declare -g scrcpy_option_16_="$scrcpy_option_16"
 	declare -g scrcpy_option_17_="$scrcpy_option_17"
+
+	list_devices=$(adb devices | awk 'NR > 1' ) #读取设备连接码
+
+	#列出设备连接码
+	start_scrcpy_=$(dialog --clear --title "连接选项" \
+			--menu "清选择要连接的设备" 20 60 10 \
+			"返回" "<--" \
+			$list_devices \
+			3>&1 1>&2 2>&3)
+
 
 	if [ $? = 0 ];then #选择了一个设备
 		if [ $start_scrcpy_ = "返回" ];then
