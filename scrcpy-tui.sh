@@ -124,7 +124,7 @@ function start_scrcpy()
 	declare -g scrcpy_option_9_="$scrcpy_option_9"
 	declare -g scrcpy_option_10_="$scrcpy_option_10"
 	declare -g start_scrcpy_option_9="--max-fps $scrcpy_option_9"
-	declare -g start_scrcpy_option_10="--bit-rate $scrcpy_option_10"m""
+	declare -g start_scrcpy_option_10="--video-bit-rate $scrcpy_option_10"m""
 
 	if [ $? = 0 ];then #选择了一个设备
 		if [ $start_scrcpy_ = "返回" ];then
@@ -258,7 +258,7 @@ function start_option_panel()
 
 			if [ $start_option_panel_ = 10 ];then
 				scrcpy_option_10_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的画面码率，默认为30M" 60 20 30 3>&1 1>&2 2>&3)
-				start_scrcpy_option_10="--bit-rate $scrcpy_option_10_"m""
+				start_scrcpy_option_10="--video-bit-rate $scrcpy_option_10_"m""
 			fi
 
 			#设置完参数后再回到设置界面
