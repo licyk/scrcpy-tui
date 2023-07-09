@@ -298,6 +298,7 @@ function start_option_panel()
 			if [ $start_option_panel_ = 10 ];then
 				if [ $scrcpy_option_10_ = "禁用" ];then
 					scrcpy_option_10_="启用"
+					rec_name=$(date "+%Y-%m-%d-%H-%M-%S") #生成录制视频名称
 					start_scrcpy_option_10="--record "$rec_name".mp4"
 				else
 					scrcpy_option_10_="禁用"
