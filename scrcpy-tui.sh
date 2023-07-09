@@ -445,6 +445,7 @@ function about_script()
 \n
 \n
 ●连接选项说明：\n
+注：有些选项可能不兼容设备\n
 \n
 置顶窗口：\n
 将 scrcpy 窗口总是保持在顶层\n
