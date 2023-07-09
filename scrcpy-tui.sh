@@ -90,6 +90,25 @@ function list_connected()
 #选择设备界面
 function start_scrcpy()
 {
+	#清除上一次的启动参数
+	declare -g start_scrcpy_option_1=""
+	declare -g start_scrcpy_option_2=""
+	declare -g start_scrcpy_option_3=""
+	declare -g start_scrcpy_option_4=""
+	declare -g start_scrcpy_option_5=""
+	declare -g start_scrcpy_option_6=""
+	declare -g start_scrcpy_option_7=""
+	declare -g start_scrcpy_option_8=""
+	declare -g start_scrcpy_option_9=""
+	declare -g start_scrcpy_option_10=""
+	declare -g start_scrcpy_option_11=""
+	declare -g start_scrcpy_option_12=""
+	declare -g start_scrcpy_option_13=""
+	declare -g start_scrcpy_option_14=""
+	declare -g start_scrcpy_option_15=""
+	declare -g start_scrcpy_option_16=""
+	declare -g start_scrcpy_option_17=""
+
 	#这个是显示参数
 	scrcpy_option_1="60"
 	scrcpy_option_2="30"
