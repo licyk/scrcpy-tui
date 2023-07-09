@@ -422,7 +422,7 @@ function about_script()
 注:\n
 手机在重启或重新打开usb调试后需要重新启用手机网络调试\n
 手机的ip地址在重启或开关WIFI后会变化，需要重新连接\n
-在脚本所在目录会产生nohup.out日志文件\n
+在脚本所在目录会产生scrcpy-tui.log日志文件,如果scrcpy启动失败可查看日志进行排错\n
 \n
 \n
 ●连接选项说明：\n
