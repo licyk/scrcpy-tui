@@ -110,7 +110,6 @@ function start_scrcpy()
 	scrcpy_option_17="禁用"
 
 	#为start_option_panel函数声明变量
-	declare -g start_scrcpy__="$start_scrcpy_"
 	declare -g start_scrcpy_option_1="--max-fps $scrcpy_option_1"
 	declare -g start_scrcpy_option_2="--video-bit-rate $scrcpy_option_2"m""
 	declare -g scrcpy_option_1_="$scrcpy_option_1"
@@ -142,7 +141,7 @@ function start_scrcpy()
 
 
 	if [ $? = 0 ];then #选择了一个设备
-	echo $?
+		declare -g start_scrcpy__="$start_scrcpy_" #传递设备连接码给tart_option_panel函数
 		if [ $start_scrcpy_ = "返回" ];then
 			mainmenu
 		else
@@ -571,7 +570,7 @@ adb:$(adb version | awk 'NR==1'| awk -F  ' ' ' {print  " " $5} ') \n
 
 ###############################################################################
 
-version_info_="0.0.2"
+version_info_="0.0.3"
 test_num=0
 
 if which dialog > /dev/null ;then
