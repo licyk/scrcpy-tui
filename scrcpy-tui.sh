@@ -181,7 +181,8 @@ function start_option_panel()
 	if [ $? = 0 ];then
 		if [ $start_option_panel_ = 0 ];then #退出启动参数设置界面，启动scrcpy
 			rec_name=$(date "+%Y-%m-%d-%H-%M-%S") #生成录制视频名称
-			nohup scrcpy --serial $start_scrcpy__ $start_scrcpy_option_1 $start_scrcpy_option_2 $start_scrcpy_option_3 $start_scrcpy_option_4 $start_scrcpy_option_5 $start_scrcpy_option_6 $start_scrcpy_option_7 $start_scrcpy_option_8 $start_scrcpy_option_9 $start_scrcpy_option_10 $start_scrcpy_option_11 $start_scrcpy_option_12 $start_scrcpy_option_13 $start_scrcpy_option_14 $start_scrcpy_option_15 $start_scrcpy_option_16 $start_scrcpy_option_17 &
+			echo [$rec_name](start) scrcpy --serial $start_scrcpy__ $start_scrcpy_option_1 $start_scrcpy_option_2 $start_scrcpy_option_3 $start_scrcpy_option_4 $start_scrcpy_option_5 $start_scrcpy_option_6 $start_scrcpy_option_7 $start_scrcpy_option_8 $start_scrcpy_option_9 $start_scrcpy_option_10 $start_scrcpy_option_11 $start_scrcpy_option_12 $start_scrcpy_option_13 $start_scrcpy_option_14 $start_scrcpy_option_15 $start_scrcpy_option_16 $start_scrcpy_option_17  >> scrcpy-tui.log
+			nohup scrcpy --serial $start_scrcpy__ $start_scrcpy_option_1 $start_scrcpy_option_2 $start_scrcpy_option_3 $start_scrcpy_option_4 $start_scrcpy_option_5 $start_scrcpy_option_6 $start_scrcpy_option_7 $start_scrcpy_option_8 $start_scrcpy_option_9 $start_scrcpy_option_10 $start_scrcpy_option_11 $start_scrcpy_option_12 $start_scrcpy_option_13 $start_scrcpy_option_14 $start_scrcpy_option_15 $start_scrcpy_option_16 $start_scrcpy_option_17 >> scrcpy-tui.log &
 			#显示进度条
 			{	for((x=1;x<=10;x++))
 			do
