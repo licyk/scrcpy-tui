@@ -177,7 +177,6 @@ function start_option_panel()
 				"15" "禁用音频转发:"$scrcpy_option_15_"" \
 				"16" "OTG模式:"$scrcpy_option_16_"" \
 				"17" "RAW输入模式:"$scrcpy_option_17_"" \
-
 				3>&1 1>&2 2>&3)
 	
 	if [ $? = 0 ];then
