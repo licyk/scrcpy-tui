@@ -179,7 +179,7 @@ function start_option_panel()
 				--menu "请设置启动选项\n选择的设备是："$start_scrcpy__"" 20 60 10 \
 				"0" "开始连接" \
 				"1" "最大帧率:"$scrcpy_option_1_"FPS" \
-				"2" "画面码率:"$scrcpy_option_2_"M" \
+				"2" "画面码率:"$scrcpy_option_2_"Mbps" \
 				"3" "置顶窗口:"$scrcpy_option_3_"" \
 				"4" "运行时禁用屏保:"$scrcpy_option_4_"" \
 				"5" "Ctrl+v粘贴:"$scrcpy_option_5_"" \
