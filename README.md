@@ -1,7 +1,7 @@
 # scrcpy-tui
 一个基于dialog显示的图形化scrcpy脚本，支持全平台  
 需要aria2,dialog,scrcpy,adb  
-** 使用前需要进行环境配置 **
+**使用前需要进行环境配置**
 # 环境配置  
 
 windows系统安装配置环境的方法：  
