@@ -53,12 +53,15 @@ C:\scrcpy
 
 Linux，macos可通过指令安装aria2,dialog,scrcpy,adb
 # 使用方法  
-打开msys2终端，在终端输入一下内容下载scrcpy-tui  
+1、打开msys2终端，在终端输入以下内容下载scrcpy-tui  
 
-    aria2c https://raw.githubusercontent.com/licyk/scrcpy-tui/main/scrcpy-tui.sh
-    chmod u+x scrcpy-tui.sh
+    aria2c https://raw.githubusercontent.com/licyk/scrcpy-tui/main/scrcpy-tui.sh && chmod u+x scrcpy-tui.sh
+    
+如果下载失败可以打开科学上网，再输入刚才的指令，或者使用github代理下载  
 
-运行scrcpy-tui  
+    aria2c https://ghproxy.com/https://raw.githubusercontent.com/licyk/scrcpy-tui/main/scrcpy-tui.sh && chmod u+x scrcpy-tui.sh
+
+2、运行scrcpy-tui  
 
     ./scrcpy-tui.sh
 
@@ -74,4 +77,4 @@ Linux，macos可通过指令安装aria2,dialog,scrcpy,adb
 （“C:\msys64”为安装目录，根据具体安装的目录修改）  
 7、先保存配置，然后打开"启动"-->"默认配置文件"，选择刚刚配置好的"MInGW64"  
 8、保存，关闭终端，再重新打开终端时就默认启动msys2了  
-注：windrows10要先在在microsoft store下载windows终端
+注：windrows10要先在microsoft store下载windows终端
