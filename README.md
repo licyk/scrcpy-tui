@@ -45,7 +45,7 @@ windows系统安装配置环境的方法：
 4、前往[scrcpy官网](https://github.com/Genymobile/scrcpy/releases/)下载scrcpy-win64，并解压  
 此时把解压的文件放在合适的位置，位置可以自己选，只要能找到就行，比如  
 C:\scrcpy  
-(文件夹内包括adb.exe和scrcpy.exe)  
+(文件夹内包括adb.exe和scrcpy.exe等文件，而且不能放在该文件夹的子文件夹里)  
 记下刚才的位置，在桌面此电脑图标上点击鼠标右键，然后选择“属性”选项  
 打开系统窗口后，点击“高级系统设置”选项  
 在打开的窗口中，点击“高级”选项卡下“环境变量”  
