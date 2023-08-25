@@ -216,12 +216,12 @@ function start_option_panel()
 
 		#判断选择修改的参数
 			if [ $start_option_panel_ = 1 ];then
-				scrcpy_option_1_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的帧率，默认为60帧" 60 20 60 3>&1 1>&2 2>&3)
+				scrcpy_option_1_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的帧率，默认为60帧" 20 60 60 3>&1 1>&2 2>&3)
 				start_scrcpy_option_1="--max-fps $scrcpy_option_1_"
 			fi
 
 			if [ $start_option_panel_ = 2 ];then
-				scrcpy_option_2_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的画面码率，默认为30M" 60 20 30 3>&1 1>&2 2>&3)
+				scrcpy_option_2_=$(dialog --clear --title "设备连接" --inputbox "请输入要设置的画面码率，默认为30M" 20 60 30 3>&1 1>&2 2>&3)
 				start_scrcpy_option_2="--video-bit-rate $scrcpy_option_2_"m""
 			fi
 
